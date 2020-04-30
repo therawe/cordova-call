@@ -44,7 +44,7 @@
 
         <resource-file src="src/android/res/layout/activity_lock_screen.xml" target="res/layout/activity_lock_screen.xml" />
       
-        <resource-file src="src/android/res/values/dimens.xml" target="res/values/dimens.xml" />
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values/tw-dimens.xml" />
   </platform>
 
     <platform name="ios">
