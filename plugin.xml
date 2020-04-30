@@ -33,12 +33,18 @@
         </config-file>
 
         <framework src="com.google.firebase:firebase-messaging:18.0.0" />
-        <framework src="project(path: ':capacitor-android')" />
 
         <source-file src="src/android/CordovaCall.java" target-dir="src/com/therawe/cordovacall" />
         <source-file src="src/android/LockScreenActivity.java" target-dir="src/com/therawe/cordovacall" />
         <source-file src="src/android/ResourceUtilities.java" target-dir="src/com/therawe/cordovacall" />
         <source-file src="src/android/TheraweNotificationService.java" target-dir="src/com/therawe/cordovacall" />
+
+        <resource-file src="src/android/res/drawable/background_icon_screen.xml" target="res/drawable/background_icon_screen.xml" />
+        <resource-file src="src/android/res/drawable/background_icon.png" target="res/drawable/background_icon.png" />
+
+        <resource-file src="src/android/res/layout/activity_lock_screen.xml" target="res/layout/activity_lock_screen.xml" />
+      
+        <resource-file src="src/android/res/values/dimens.xml" target="res/values/dimens.xml" />
   </platform>
 
     <platform name="ios">
