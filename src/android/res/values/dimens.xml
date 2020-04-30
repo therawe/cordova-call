@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="activity_lock_action_margin">100dp</dimen>
+    <dimen name="activity_lock_name_margin">175dp</dimen>
+</resources>

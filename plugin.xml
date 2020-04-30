@@ -13,28 +13,29 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="CordovaCall">
-                <param name="android-package" value="com.dmarc.cordovacall.CordovaCall" />
+                <param name="android-package" value="com.therawe.cordovacall.CordovaCall" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <config-file parent="/*" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.BIND_TELECOM_CONNECTION_SERVICE"/>
-            <uses-permission android:name="android.permission.CALL_PHONE"/>
-            <uses-permission android:name="android.permission.MANAGE_OWN_CALLS"/>
+            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+            <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
         </config-file>
 
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
-            <service android:name="com.dmarc.cordovacall.MyConnectionService"
-                    android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
+            <activity android:name="com.therawe.cordovacall.LockScreenActivity"></activity>
+            <service android:name="com.therawe.cordovacall.TheraweNotificationService" android:stopWithTask="false">
                 <intent-filter>
-                    <action android:name="android.telecom.ConnectionService" />
+                    <action android:name="com.google.firebase.MESSAGING_EVENT" />
                 </intent-filter>
             </service>
         </config-file>
 
-        <source-file src="src/android/CordovaCall.java" target-dir="src/com/dmarc/cordovacall" />
-        <source-file src="src/android/MyConnectionService.java" target-dir="src/com/dmarc/cordovacall" />
+        <source-file src="src/android/CordovaCall.java" target-dir="src/com/therawe/cordovacall" />
+        <source-file src="src/android/LockScreenActivity.java" target-dir="src/com/therawe/cordovacall" />
+        <source-file src="src/android/ResourceUtilities.java" target-dir="src/com/therawe/cordovacall" />
+        <source-file src="src/android/TheraweNotificationService.java" target-dir="src/com/therawe/cordovacall" />
   </platform>
 
     <platform name="ios">

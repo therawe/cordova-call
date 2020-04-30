@@ -1,47 +1,18 @@
 {
-  "_args": [
-    [
-      "cordova-plugin-callkit@1.0.0",
-      "/Users/travis/Source/therawe-client"
-    ]
-  ],
-  "_from": "cordova-plugin-callkit@1.0.0",
-  "_id": "cordova-plugin-callkit@1.0.0",
-  "_inBundle": false,
-  "_integrity": "sha512-ome8SlTToEkM0CHekY7y/11V7sJbzW1g9Q1A7t4JFnRw0MDPozgeB0C5SLp1wFdTtojuTeiwR+cguJMBsqaWww==",
-  "_location": "/cordova-plugin-callkit",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "cordova-plugin-callkit@1.0.0",
-    "name": "cordova-plugin-callkit",
-    "escapedName": "cordova-plugin-callkit",
-    "rawSpec": "1.0.0",
-    "saveSpec": null,
-    "fetchSpec": "1.0.0"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-callkit/-/cordova-plugin-callkit-1.0.0.tgz",
-  "_spec": "1.0.0",
-  "_where": "/Users/travis/Source/therawe-client",
-  "author": {
-    "name": "Matthew Khaw"
-  },
-  "bugs": {
-    "url": "https://github.com/mattkhaw/cordova-plugin-callkit/issues"
-  },
+  "name": "cordova-plugin-tw-call",
+  "version": "1.0.0",
+  "description": "Cordova plugin that lets you use iOS CallKit UI (with PushKit) and Android Full Screen notification",
   "cordova": {
-    "id": "cordova-plugin-callkit",
+    "id": "cordova-plugin-tw-call",
     "platforms": [
       "ios",
       "android"
     ]
   },
-  "description": "Cordova plugin that lets you use iOS CallKit UI (with PushKit) and Android ConnectionService UI",
-  "homepage": "https://github.com/mattkhaw/cordova-plugin-callkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/therawe/cordova-call"
+  },
   "keywords": [
     "voip",
     "cordova",
@@ -52,11 +23,7 @@
     "cordova-android",
     "cordova-ios"
   ],
-  "license": "MIT",
-  "name": "cordova-plugin-callkit",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mattkhaw/cordova-plugin-callkit.git"
-  },
-  "version": "1.0.0"
+  "homepage": "https://github.com/therawe/cordova-call",
+  "author": "TheraWe",
+  "license": "MIT"
 }

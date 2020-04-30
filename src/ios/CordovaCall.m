@@ -580,7 +580,7 @@ BOOL enableDTMF = NO;
     NSString *message = payloadDict[@"alert"];
     NSLog(@"[objC] received VoIP message: %@", message);
     
-    NSString *data = payload.dictionaryPayload[@"data"];
+    NSDictionary *data = payload.dictionaryPayload[@"data"];
     NSLog(@"[objC] received data: %@", data);
     
     NSMutableDictionary* results = [NSMutableDictionary dictionaryWithCapacity:2];
@@ -588,8 +588,7 @@ BOOL enableDTMF = NO;
     [results setObject:data forKey:@"extra"];
     
     @try {
-        NSError* error;
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:[data dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+        NSDictionary* json = data;
         
         NSObject* caller = [json objectForKey:@"Caller"];
         NSArray* args = [NSArray arrayWithObjects:[caller valueForKey:@"Username"], [caller valueForKey:@"ConnectionId"], nil];
