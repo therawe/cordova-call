@@ -32,6 +32,8 @@
             </service>
         </config-file>
 
+        <framework src="com.google.firebase:firebase-messaging:18.0.0" />
+
         <source-file src="src/android/CordovaCall.java" target-dir="src/com/therawe/cordovacall" />
         <source-file src="src/android/LockScreenActivity.java" target-dir="src/com/therawe/cordovacall" />
         <source-file src="src/android/ResourceUtilities.java" target-dir="src/com/therawe/cordovacall" />
