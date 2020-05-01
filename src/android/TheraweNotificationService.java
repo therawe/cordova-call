@@ -8,16 +8,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Build;
+import android.view.WindowManager;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.google.firebase.messaging.FirebaseMessagingService;
+import com.getcapacitor.CapacitorFirebaseMessagingService;
+import com.getcapacitor.JSObject;
+import com.getcapacitor.plugin.PushNotifications;
 import com.google.firebase.messaging.RemoteMessage;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Map;
 
@@ -25,7 +28,7 @@ import capacitor.android.plugins.R;
 
 import static com.therawe.cordovacall.CordovaCall.*;
 
-public class TheraweNotificationService extends FirebaseMessagingService {
+public class TheraweNotificationService extends CapacitorFirebaseMessagingService {
 
     private static final String CHANNEL_ID = "therawe_notification_channel";
     static final int NOTIFICATION_ID = 1;
@@ -45,7 +48,7 @@ public class TheraweNotificationService extends FirebaseMessagingService {
 
         if (data.containsKey("extra")) {
             try {
-                JSONObject extra = new JSONObject(data.get("extra"));
+                JSObject extra = new JSObject(data.get("extra"));
                 String notificationType = extra.getString("type");
                 if (notificationType.equals("VIDEO_CALL_INCOMING")) {
                     String callerName = extra.getString("callingUserName");
@@ -122,6 +125,8 @@ public class TheraweNotificationService extends FirebaseMessagingService {
                 }
             } catch (JSONException e) { }
         }
+
+        super.onMessageReceived(remoteMessage);
     }
 
     private BroadcastReceiver notificationBroadcastReceiver = new BroadcastReceiver() {
