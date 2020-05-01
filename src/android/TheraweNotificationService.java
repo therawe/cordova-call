@@ -8,16 +8,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.Uri;
 import android.os.Build;
-import android.view.WindowManager;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.getcapacitor.CapacitorFirebaseMessagingService;
 import com.getcapacitor.JSObject;
-import com.getcapacitor.plugin.PushNotifications;
 import com.google.firebase.messaging.RemoteMessage;
 
 import org.json.JSONException;
